@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Compressor - VP8/VP9 WebM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Video Compressor</h1>
+            <p>Compress videos to WebM format using VP8/VP9 codecs</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section id="upload-section" class="section">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">📁</div>
+                    <h3>Drop your video here</h3>
+                    <p>or click to browse</p>
+                    <p class="file-types">Supported: MP4, MOV, AVI, MKV, WebM</p>
+                    <input type="file" id="file-input" accept="video/*" hidden>
+                </div>
+
+                <div id="file-info" class="file-info hidden">
+                    <h3>📹 Video Information</h3>
+                    <div id="info-content"></div>
+                </div>
+            </section>
+
+            <!-- Preset Selection -->
+            <section id="preset-section" class="section hidden">
+                <h3>⚙️ Compression Settings</h3>
+
+                <div class="preset-grid" id="preset-grid">
+                    <!-- Presets will be loaded here -->
+                </div>
+
+                <div class="options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="preserve-alpha">
+                        <span>Preserve Alpha Channel (VP9 only)</span>
+                    </label>
+                </div>
+
+                <button id="compress-btn" class="btn btn-primary">
+                    🚀 Start Compression
+                </button>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress-section" class="section hidden">
+                <h3>⏳ Compressing...</h3>
+
+                <div class="progress-info">
+                    <div class="progress-text">
+                        <span id="progress-filename">video.mp4</span>
+                        <span id="progress-preset">Preset: web</span>
+                    </div>
+
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                        <div class="progress-percentage" id="progress-percentage">0%</div>
+                    </div>
+
+                    <div class="progress-details">
+                        <span id="progress-time">Time: 0s / 0s</span>
+                        <span id="progress-eta">ETA: --</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="section hidden">
+                <h3>✅ Compression Complete!</h3>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Input Size</div>
+                        <div class="result-value" id="result-input-size">-- MB</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Output Size</div>
+                        <div class="result-value" id="result-output-size">-- MB</div>
+                    </div>
+
+                    <div class="result-card highlight">
+                        <div class="result-label">Compression Ratio</div>
+                        <div class="result-value" id="result-ratio">--x</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Space Saved</div>
+                        <div class="result-value" id="result-saved">-- MB</div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="download-btn" class="btn btn-primary">
+                        💾 Download Compressed Video
+                    </button>
+                    <button id="compress-another-btn" class="btn btn-secondary">
+                        🔄 Compress Another Video
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="error-section" class="section hidden">
+                <h3>❌ Error</h3>
+                <div class="error-message" id="error-message"></div>
+                <button id="try-again-btn" class="btn btn-secondary">
+                    🔄 Try Again
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by Video Compressor SDK | VP8/VP9 WebM Compression</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

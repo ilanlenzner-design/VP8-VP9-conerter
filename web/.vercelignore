@@ -1,0 +1,12 @@
+uploads/
+compressed/
+__pycache__/
+*.pyc
+*.log
+.env
+venv/
+*.mp4
+*.webm
+*.mov
+test_*.py
+launch.py
