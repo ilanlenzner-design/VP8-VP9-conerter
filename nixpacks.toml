@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ['python311', 'ffmpeg']
-
-[phases.install]
-cmds = ['pip install -r web/requirements.txt']
-
-[start]
-cmd = 'cd web && python app.py'
